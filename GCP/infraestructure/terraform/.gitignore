@@ -90,3 +90,4 @@ data-services
 *.zip
 .terraform
 cloud-functions-files
+*.json
