@@ -88,6 +88,6 @@ terraform.rc
 data-services
 #__cicd__
 *.zip
-.terraform
+/.terraform
 cloud-functions-files
 simplon-dev-437314-f2fe200832e3.json
