@@ -47,16 +47,24 @@ jobs:
      
       - name: Terraform Init
         working-directory: './GCP/infraestructure/terraform'
-        run: terraform init 
+        run: terraform init
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }}
 
       - name: Terraform Plan
         working-directory: './GCP/infraestructure/terraform'
         run: terraform plan 
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }}
 
       - name: Terraform Destroy
         working-directory: './GCP/infraestructure/terraform'
         run: terraform destroy 
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }}
 
       - name: Terraform Apply
         working-directory: './GCP/infraestructure/terraform'
         run: terraform apply -auto-approve -input=false 
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.CREDENTIALS }}
