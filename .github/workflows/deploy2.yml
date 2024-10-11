@@ -34,29 +34,29 @@ jobs:
       #  run: echo ${{ env.envi }}
 
       - name: zip
-        run: python3 ../infraestructure/__cicd__/conversion_to_zip_file.py 
+        run: python3 ./GCP/infraestructure/__cicd__/conversion_to_zip_file.py 
       
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: csv-to-parquet.zip
-          path: infraestructure/terraform/cloud-fonctions-files/csv-to-parquet.zip
+          path: ./GCP/infraestructure/terraform/cloud-fonctions-files/csv-to-parquet.zip
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
      
       - name: Terraform Init
-        working-directory: 'infraestructure/terraform'
+        working-directory: './GCP/infraestructure/terraform'
         run: terraform init 
 
       - name: Terraform Plan
-        working-directory: 'infraestructure/terraform'
+        working-directory: './GCP/infraestructure/terraform'
         run: terraform plan 
 
       - name: Terraform Destroy
-        working-directory: 'infraestructure/terraform'
+        working-directory: './GCP/infraestructure/terraform'
         run: terraform destroy 
 
       - name: Terraform Apply
-        working-directory: 'infraestructure/terraform'
+        working-directory: './GCP/infraestructure/terraform'
         run: terraform apply -auto-approve -input=false 
