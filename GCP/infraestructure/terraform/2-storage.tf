@@ -22,3 +22,8 @@ resource "google_storage_bucket" "function_bucket_5" {
     name     = "simplon-cloud-function-terraform"
     location = var.region
 }
+
+resource "google_storage_bucket" "function_bucket_6" {
+    name     = "simplon-state-terraform"
+    location = var.region
+}
