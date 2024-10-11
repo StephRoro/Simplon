@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
   project = "simplon-dev-437314"
-  credentials = file("credentials/simplon-dev-437314-f2fe200832e3.json")
+  credentials = file("credentials/simplon-dev-437314-60cdab0ced90.json")
   region  = "europe-west9"
   zone    = "europe-west9-c"
 }
